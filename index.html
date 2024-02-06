@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>CPSC447 Project</title>
+    <link rel="icon" href="data:;base64,iVBORwOKGO=" />
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div id="title-container">
+        <div id="speech-bubble">
+            <h1>Domain Expansion: Expanding Anime Horizons With Data!</h1>
+        </div>
+        <div id="blurb-speech-bubble">
+            <div id="overlay-text">
+                <p>Embark on a visual odyssey through the realm of anime by viewing the statistics of the top scoring 1000 anime. Our main spectacle, a packed bubble chart, invites you to discover the magnitude of anime that shape this universe. <strong style="text-decoration: underline;">Begin by clicking on a bubble...</strong></p>
+            </div>
+            <img src="data/speech_bubble.png" />
+        </div>
+    </div>
+    <div id="container">
+        <div id="charts-container">
+
+            <div class="chart-row">
+                <div id="packed-bubble-container" class="chart-container">
+                    <svg id="packed-bubble"></svg>
+                </div>
+
+                <div id="scatter-plot-container" class="chart-container">
+                    <svg id="scatter-title"></svg>
+                    <svg id="scatter-plot"></svg>
+                </div>
+            </div>
+
+            <div id="bar-chart-container" class="chart-container">
+                <svg id="bar-chart-title"></svg>
+
+                <div class="wrap-selector">
+                    <div class="year-selector">
+                        <span>From: </span>
+                        <select id="selectButtonFrom"></select>
+
+                        <span>To: </span>
+                        <select id="selectButtonTo"></select>
+                    </div>
+                </div>
+
+                <svg id="bar-chart"></svg>
+            </div>
+
+        </div>
+        <svg id="legend-global"></svg>
+    </div>
+
+
+    <script src="js/d3.v6.min.js"></script>
+    <script src="js/topPackedBubble.js"></script>
+    <script src="js/animePackedBubble.js"></script>
+    <script src="js/barchart.js"></script>
+    <script src="js/scatterplot.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/globalLegend.js"></script>
+
+</body>
+
+</html>
