@@ -1,0 +1,323 @@
+@font-face {
+    font-family: 'Manga Temple';
+    src: url(../data/mangat.ttf) format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: 'Manga Temple', sans-serif;
+    font-size: 12px;
+    padding: 30px;
+    background: url('../data/gojo_panels.png') no-repeat center center fixed;
+    background-size: cover;
+    position: relative;
+}
+
+/* Selector */
+.wrap-selector {
+    align-self: flex-start;
+    padding-left: 20px;
+    position:relative;
+}
+
+.year-selector select {
+    -webkit-appearance: none;
+    display: none;
+    appearance: none;
+    font-family: 'Manga Temple', sans-serif;
+    min-width: 6em;
+    font-size: 1rem;
+    padding: 0.4em 0.6em 0.4em 0.6em;
+    background: transparent;
+    background-image: url("data:image/svg+xml;utf8,<svg fill='black' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+    background-repeat: no-repeat;
+    background-position-x: 98%;
+    background-position-y: 5px;
+    background-color: #fff;
+    border: 1px solid #caced1;
+    border-radius: 0.25rem;
+    color: #000;
+    cursor: pointer;
+    display: inline-block;
+}
+
+
+/* Axis */
+.axis line {
+    fill: none;
+    stroke: #000;
+    shape-rendering: crispEdges;
+}
+
+.axis text {
+    font-size: 13px;
+    fill: #1b1919;
+    font-family: 'Manga Temple', sans-serif;
+}
+
+.barAxis text {
+    font-size: 10px;
+    fill: #1b1919;
+}
+
+.axis-title {
+    font-size: 16px;
+    fill: #1b1919;
+}
+
+.y-axis .tick:first-child line {
+    stroke: #000;
+}
+
+.y-axis .tick:first-child text {
+    display: none;
+}
+
+.x-axis .tick:first-child line {
+    display: none;
+}
+
+.axis path {
+    display: none;
+}
+
+.tooltip {
+    position: absolute;
+    text-align: center;
+    padding: 8px;
+    font: 12px sans-serif;
+    background: white;
+    border: solid 0.5px #aaa;
+    border-radius: 8px;
+    pointer-events: none;
+    opacity: 0;
+}
+
+.tooltip-title {
+    color: #000;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 6px;
+}
+
+.tooltip ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 10px;
+    text-align: left;
+
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.tooltip li {
+    font-size: 12px;
+    color: #333;
+    margin-bottom: 4px;
+}
+
+
+.tooltip h3 {
+    margin: 0;
+    padding-bottom: 8px;
+    font-size: 15px;
+    border-bottom: 1px solid #ccc;
+    font-weight: 600;
+}
+
+.tooltip p {
+    margin: 8px 0;
+    color: #555;
+    font-size: 12px;
+}
+
+.chart-container {
+    background-color: white;
+    padding-top: 5px;
+    margin: 0;
+    border: 2px solid #000000;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+/* Stacked bar chart */
+rect {
+    shape-rendering: crispEdges;
+}
+
+#container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Manga Temple', sans-serif;
+}
+
+#charts-container {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 175px;
+}
+
+#title-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    width: 100%;
+}
+
+.chart-row {
+    display: flex;
+    flex-direction: row;
+}
+
+#packed-bubble-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin-right: 20px;
+    flex-grow: 1;
+    padding-top: 0px;
+    background: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)),
+        url('../data/jogo_vs_sukuna.jpeg') no-repeat center center fixed;
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+}
+
+#scatter-plot-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)),
+        url('../data/fight_panel_no_text.jpeg') no-repeat center center fixed;
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+}
+
+#bar-chart-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    background: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)),
+        url('../data/gojo-geto.jpg') no-repeat bottom center fixed;
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+}
+
+#scatter-title-widget {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.title-drillDown-text,
+.title-topView-text {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#bar-chart-title {
+    align-self: center;
+}
+
+#legend-global {
+    position: fixed;
+    right: 100px;
+    background: white;
+    border: 2px solid #000000;
+    border-radius: 10px;
+    padding: 10px;
+    top: 245px;
+    background: white url('../data/dragIcon.png') no-repeat no-repeat right 0.5em top 0.5em;
+    background-size: 30px 30px;
+    cursor: move;
+    z-index: 2;
+}
+
+#legend-global:active {
+    border-style: dashed;
+}
+
+#speech-bubble {
+    position: relative;
+    display: inline-block;
+    background-color: #ffffff;
+    padding: 15px;
+    width: auto;
+    max-width: 90%;
+    border-radius: 100px;
+    margin-bottom: 20px;
+    border: 2px solid #000000;
+    margin-left: 20px;
+    position: relative;
+    height: auto;
+}
+
+#speech-bubble::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: -20px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 10px 20px 10px 0;
+    border-color: transparent #000000 transparent transparent;
+    transform: translateY(-50%);
+    background-color: #ffffff;
+    border-radius: 8px;
+}
+
+#speech-bubble h1 {
+    font-size: 20px;
+    margin: 0;
+}
+
+#blurb-speech-bubble {
+    position: relative;
+    width: 41%;
+    height: 95px;
+    padding: 15px;
+    border-radius: 100px;
+    margin-top: -60px;
+    margin-bottom: 20px;
+}
+
+#overlay-text {
+    position: absolute;
+    top: 86%;
+    left: 55%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-size: 10.5px;
+    font-family: 'Manga Temple', sans-serif;
+    color: #000;
+    z-index: 1;
+    width: 75%;
+}
+
+#overlay-text p {
+    margin: 0;
+}
+
+#blurb-speech-bubble img {
+    width: 110%;
+    height: 190%;
+    border-radius: 100px;
+}
+
+
+
+
+
+
